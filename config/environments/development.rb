@@ -36,6 +36,10 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  #agregué esta linea segun la configuracion del video en la instalacion de devise minuto 18
+  #Required by Devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 30
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
