@@ -1,0 +1,17 @@
+<h2> Listado de Ordenes de Trabajo OT </h2>
+</br>
+<% @orders.each  do |ot| %>
+<ul>
+    <li>
+    Nº OT:<%= ot.id %>
+    Descripción:<%= ot.diagnostic %>
+    Solucion:<%= ot.solution %>
+    Status:<%= ot.status %>
+    Delivery_date:<%= ot.delivery_date %>
+    <%= link_to "Editar", edit_order_path(ot) %>
+    <%= link_to "Detalle", order_path(ot) %>
+   </li>
+</ul>
+<% end %>
+<%= link_to "Crear OT", new_path %>
+
