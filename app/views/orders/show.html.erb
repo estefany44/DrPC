@@ -1,0 +1,14 @@
+<h2> Detalle OT</h2>
+</br>
+<ul>
+   <li> Descripción:<%= @order.diagnostic %></li>
+   </li> Solucion:<%= @order.solution %> </li>
+   </li> Status:<%= @order.status %> </li>
+   </li> Delivery_date:<%= @order.delivery_date %> </li> </li>
+ </ul>
+ </br>
+
+<%= link_to "volver al listado", orders_path  %>
+<%= link_to "Borrar", order_path(@order), method: :delete %>
+
+
