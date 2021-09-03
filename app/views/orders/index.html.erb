@@ -1,17 +1,36 @@
 <h2> Listado de Ordenes de Trabajo OT </h2>
 </br>
-<% @orders.each  do |ot| %>
-<ul>
-    <li>
-    Nº OT:<%= ot.id %>
-    Descripción:<%= ot.diagnostic %>
-    Solucion:<%= ot.solution %>
-    Status:<%= ot.status %>
-    Delivery_date:<%= ot.delivery_date %>
-    <%= link_to "Editar", edit_order_path(ot) %>
-    <%= link_to "Detalle", order_path(ot) %>
-   </li>
-</ul>
-<% end %>
-<%= link_to "Crear OT", new_path %>
+<div class="container">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nº OT</th>
+          <th scope="col">Diagnostico</th>
+          <th scope="col">Solución</th>
+          <th scope="col">Status</th>
+          <th scope="col">Delivery Date</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @orders.each  do |ot| %>
+          <tr>
+            <th scope="row"><%= ot.id %></th>
+            <td><%= ot.diagnostic %></td>
+            <td><%= ot.solution %></td>
+            <td><%= ot.status %></td>
+            <td><%= ot.delivery_date %></td>
+            <td><%= button_to "Editar", edit_order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
+            <td><%= button_to "Detalle", order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </br>
+  <%= button_to "Crear Nueva Orden de Trabajo", new_path, class:"btn btn-primary", :method => :get %>
+</div>
+
+
+
 
