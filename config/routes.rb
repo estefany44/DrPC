@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
 #end orders ----------------------------------------------------
 
+
+  get 'services', to: 'pages#services'
   resources :appointments
 end
