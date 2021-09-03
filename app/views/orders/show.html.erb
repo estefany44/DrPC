@@ -1,5 +1,7 @@
-<h2> Detalle OT</h2>
+<div class="row">
+  <div class="col-md-6"><h2> Detalle OT</h2>
 </br>
+<div>
 <ul>
    <li> Descripción:<%= @order.diagnostic %></li>
    </li> Solucion:<%= @order.solution %> </li>
@@ -7,8 +9,8 @@
    </li> Delivery_date:<%= @order.delivery_date %> </li> </li>
  </ul>
  </br>
+ <div>
 
-<%= link_to "volver al listado", orders_path  %>
+<%= link_to "Volver al listado", orders_path  %>
 <%= link_to "Borrar", order_path(@order), method: :delete %>
-
-
+</div>
