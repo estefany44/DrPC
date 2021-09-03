@@ -17,11 +17,6 @@
         <a class="nav-link" <%= link_to "appointment", appointments_path %></a>
       </li>
 
-
-      <li class="nav-item">
-        <a class="nav-link" <%= link_to "orders", orders_path %></a>
-      </li>
-
        <li class="nav-item">
         <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
       </li>
@@ -52,6 +47,10 @@
       </li>
       <li class="nav-item active">
         <a class="nav-link" <%= link_to "Services", services_path %></a>
+      </li>
+
+            <li class="nav-item">
+        <a class="nav-link" <%= link_to "orders", orders_path %></a>
       </li>
 
       <li class="nav-item">
