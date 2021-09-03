@@ -6,3 +6,5 @@ User.create(first_name: "Nombre", last_name: "Apellido", rut: "Rut", client: tru
 puts "Creando Appoitnments"
 Appointment.create(user: User.last, description: "Descripcion", status: "Estado de la reserva")
 puts "Terminado"
+
+
