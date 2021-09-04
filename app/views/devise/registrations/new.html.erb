@@ -2,20 +2,32 @@
   <div class="col-md-6">
     <h2 class="pb-4"><%= t('.sign_up') %></h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
-	<%= f.imput :email%>
-	<%= f.imput :first_name%>
-	<%= f.imput :last_name%>
-	<%= f.imput :rut%>
-	<%= f.imput :address%>
-	<%= f.imput :phone%>
+	<%= f.label :email, class: "form-label" %>
+	<%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <div class="row mb-4">
+	<div class="col">
+	  <%= f.label :password, class: "form-label" %>
+	  <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+
+	  <% if @minimum_password_length %>
+	    <div class="form-text"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></div>
+	  <% end %>
+	</div>
+
+	<div class="col">
+	  <%= f.label :password_confirmation, class: "form-label" %>
+	  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+	</div>
       </div>
 
       <div class="mb-3">
-	<%= f.button :submit, "sign up" %>
+	<%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
       </div>
     <% end %>
 

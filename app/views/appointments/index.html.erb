@@ -1,6 +1,31 @@
-<h1>appointment</h1>
+<h2> Listado de Citas </h2>
+</br>
+<div class="container">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id de la cita</th>
+          <th scope="col">Status</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @appointments.each  do |a| %>
+          <tr>
+            <th scope="row"><%= a.id %></th>
+            <td><%= a.description %></td>
+            <td><%= a.status %></td>
+            <td><%= a.start_date %></td>
+            <td><%= a.end_date %></td>
+            <td><%= a.status %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </br>
 
+  <%= button_to "Agendar cita", new_path, class:"btn btn-primary", :method => :get %>
+</div>
 
-<li class="nav-item active">
-        <a class="nav-link" <%= link_to "new", new_appointment_path %></a>
-      </li>

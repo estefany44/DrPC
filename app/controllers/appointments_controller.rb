@@ -11,42 +11,45 @@ class AppointmentsController < ApplicationController
   
   def new 
     @appointment = Appointment.new
-
   end
   
   def create 
     @appointment = Appointment.new(appointment_params)
-    @appointment.user = current_user
-   # authorize @appointment
-    if @appointment.save
-      redirect_to appointment_path(@appointments)
-    else 
-      # @appointment.user = nil
-      # @appointments = current_user.appointments.select { |a| a.persisted? }
-      render :new
-    end
+    #@appointment.user = current_user
+   #authorize @appointment
+   @appointment.save
+    #if @appointment.save
+      redirect_to appointment_path
+    # else 
+    #   @appointment.user = nil
+    #   @appointments = current_user.appointments.select { |a| a.persisted? }
+    #   render :new
+    #end
   end
 
   def edit 
   end
   
   def update 
-    if @appointment.update(appointment_params)
-      redirect_to @appointment
-    else 
-      #set_appointments
-      render :edit
-    end
+    #if 
+      @appointment.update(appointment_params)
+      redirect_to appointments_path
+    # else 
+    #   set_appointments
+    #   render :edit
+    # end
   end
   
   def destroy 
     @appointment.destroy 
-    redirect_to appointments_path(@appointments)
+    redirect_to appointments_path
   end  
   private
     
   def set_appointment
-    @appointment = current_user.appointments.find_by(id: params[:id])
+    @appointment = appointment.find(params[:id])
+    
+    #@appointment = current_user.appointments.find_by(id: params[:id])
       # if @appointment.nil? 
       #   flash[:error] = "Appointment not found."
       #   redirect_to appointments_path
