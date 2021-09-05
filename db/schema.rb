@@ -49,11 +49,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_150602) do
     t.string "first_name"
     t.string "last_name"
     t.string "rut"
-<<<<<<< HEAD
     t.string "type"
-=======
-    t.boolean "client"
->>>>>>> 4ef48a38878ecd5c835e5ba44846501107545cf4
     t.string "address"
     t.string "phone"
     t.string "email", default: "", null: false
