@@ -1,5 +1,7 @@
 <div class="appointment">
   <%= @appointment.description %>
   <%= @appointment.status %>
+  <%= link_to "Volver citas", appointments_path  %>
+<%= link_to "Borrar", appointments_path(@appointment), method: :delete %>
 
 </div>

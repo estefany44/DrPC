@@ -1,16 +1,33 @@
-<div class="row">
-  <div class="col-md-6"><h2> Detalle OT</h2>
 </br>
-<div>
-<ul>
-   <li> Descripción:<%= @order.diagnostic %></li>
-   </li> Solucion:<%= @order.solution %> </li>
-   </li> Status:<%= @order.status %> </li>
-   </li> Delivery_date:<%= @order.delivery_date %> </li> </li>
- </ul>
- </br>
- <div>
-
-<%= link_to "Volver al listado", orders_path  %>
-<%= link_to "Borrar", order_path(@order), method: :delete %>
+<h2> Detalle OT  N°<%=@order.id%></h2>
+</br>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Diagnostico</th>
+          <th scope="col">Solución</th>
+          <th scope="col">Status</th>
+          <th scope="col">Delivery Date</th>
+          <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <th scope="row"><%= @order.id %></th>
+        <td><%= @order.diagnostic %></td>
+        <td><%= @order.solution %></td>
+        <td><%= @order.status %></td>
+        <td><%= @order.delivery_date %></td>
+        <td><%= link_to "Borrar", order_path(@order), method: :delete, class:"btn btn-outline-primary"%></td>
+        </tr>
+         </br>
+        </tbody>
+    </table>
+    </br>
+    </br>
+    </br>
+    <div>
+    <div>
+    <%= link_to "Volver al listado", orders_path, class:"btn btn-outline-primary"  %>
 </div>
