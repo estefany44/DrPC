@@ -1,5 +1,8 @@
 <h2> Listado de Ordenes de Trabajo OT </h2>
 </br>
+<%= link_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %>
+<%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
+</br>
 <div class="container">
       <table class="table table-striped">
       <thead>
@@ -28,7 +31,7 @@
         </tbody>
       </table>
   </br>
-  <%= button_to "Crear Nueva Orden de Trabajo", new_path, class:"btn btn-primary", :method => :get %>
+
 </div>
 
 
