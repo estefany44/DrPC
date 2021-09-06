@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-<<<<<<< HEAD
-
-    
-=======
 before_action :set_order, only: [:show,:edit,:update,:destroy]
 
   def index
@@ -47,5 +43,4 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
   def set_order
     @order = Order.find(params[:id])
   end
->>>>>>> d9caee56b7bcbcf36a42ed3b11de1a19fbfe47c3
 end
