@@ -7,6 +7,7 @@ class AppointmentsController < ApplicationController
   end 
   
   def show 
+    # hacer un show para user y uno para tecnico
   end
   
   def new 
