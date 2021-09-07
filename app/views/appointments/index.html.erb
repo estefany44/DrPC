@@ -1,3 +1,38 @@
+
+<h1>Appointments</h1>
+
+<li class="nav-item active">
+        <a class="nav-link" <%= link_to "new", new_appointment_path %></a>
+      </li>
+
+<!-- un usuario puede acceder a todas las vistas menos a la OT y al listado de appointments
+un usuario puede hacer reservas, mientras esta esté en curso no puede hacer otra
+a menos que si la elimina puede crear una nueva
+
+cuando el usuario le click a 'ver mi orden' podrá ver el detalle con HORA Y FECHA
+y tendrà opcion a ver el historico de sus appointment
+
+El tecnico podrá ver el listado general de las citas y OT
+
+El técnico podrá cambiar estatus pero no eliminar la cita
+
+ -->
+<div class="container">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID usuario</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Estado de la reserva</th>
+          <th scope="col">Fecha</th>
+          <th scope="col"></th>
+      </tr>
+      </thead>
+      </table>
+  </br>
+  <%= button_to "Crear Nueva Orden de Trabajo", new_path, class:"btn btn-primary", :method => :get %>
+</div>
+
 <h3> Listado de Citas </h3>
 </br>
 <div class="container">
@@ -22,7 +57,7 @@
             <td><%= a.user.email%></td>
             <td><%= a.start_date %></td>
             <td><%= a.end_date %></td>
-          
+
     <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-primary", :method => :get %></td>
         </tr>
         <% end %>
