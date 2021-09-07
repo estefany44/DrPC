@@ -44,18 +44,18 @@
             <div class="navbar-collapse collapse" id="navbarCollapse">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link" href="#" data-scroll-nav="0">HOME</a>
+                     <a class="nav-link" <%= link_to "Home", root_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#" data-scroll-nav="1">ABOUT US</a>
+                     <a class="nav-link" <%= link_to "appointments", appointments_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#" data-scroll-nav="2">SERVICE</a>
+                     <a class="nav-link" <%= link_to "orders", orders_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#" data-scroll-nav="3">TEAM</a>
+                     <a class="nav-link" <%= link_to "Services", services_path %></a>
                   </li>
-                  <li class="nav-item">
+                <!--   <li class="nav-item">
                      <a class="nav-link" href="#" data-scroll-nav="4">PRICING</a>
                   </li>
                   <li class="nav-item">
@@ -63,9 +63,12 @@
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#" data-scroll-nav="6">BLOG</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link" <%= link_to "login", new_user_session_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#" data-scroll-nav="7">CONTACT</a>
+                     <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
                   </li>
                </ul>
             </div>
@@ -81,41 +84,41 @@
                     repara
                   </h2>
                   <!-- /.slider-one__title -->
-                  <p class="slider-one__text">Excepteur sint occaecat cupidatat non proident sunt in culpa qui</p>
-                  <a href="#" class="default-btn slider-one__text">Contact Us <i class="fas fa-long-arrow-alt-right"></i> </a>
+                  <p class="slider-one__text">Hola hola, aqui va una descripcion, esto no es definitivo</p>
+                  <a href="#" class="default-btn slider-one__text">Agenda tu cita <i class="fas fa-long-arrow-alt-right"></i> </a>
                   <!-- /.slider-one__text -->
                </div>
                <!-- /.container -->
             </div>
             <!-- /.item -->
-            <div class="item slider-one__slider-2" style="background-image: url(images/slider-2.jpg);">
+            <!-- <div class="item slider-one__slider-2" style="background-image: url(images/slider-2.jpg);">
                <div class="container">
                   <h2 class="slider-one__title">Repair your Computer <br>
-                     laptop .
-                  </h2>
+                     laptop . -->
+                 <!--  </h2> -->
                   <!-- /.slider-one__title -->
-                  <p class="slider-one__text">Excepteur sint occaecat cupidatat non proident sunt in culpa qui</p>
-                  <a href="#" class="default-btn slider-one__text">Contact Us <i class="fas fa-long-arrow-alt-right"></i> </a>
+                  <!-- <p class="slider-one__text">Excepteur sint occaecat cupidatat non proident sunt in culpa qui</p>
+                  <a href="#" class="default-btn slider-one__text">Contact Us <i class="fas fa-long-arrow-alt-right"></i> </a> -->
                   <!-- /.slider-one__text -->
-               </div>
+              <!--  </div> -->
                <!-- /.container -->
-            </div>
+            <!-- </div> -->
             <!-- /.item -->
-            <div class="item slider-one__slider-3" style="background-image: url(images/slider-3.jpg);">
+            <!-- <div class="item slider-one__slider-3" style="background-image: url(images/slider-3.jpg);">
                <div class="container">
                   <h2 class="slider-one__title">Repair your Computer <br>
                      laptop.
-                  </h2>
+                  </h2> -->
                   <!-- /.slider-one__title -->
-                  <p class="slider-one__text">Excepteur sint occaecat cupidatat non proident sunt in culpa qui</p>
-                  <a href="#" class="default-btn slider-one__text">Contact Us <i class="fas fa-long-arrow-alt-right"></i> </a>
+                 <!--  <p class="slider-one__text">Excepteur sint occaecat cupidatat non proident sunt in culpa qui</p>
+                  <a href="#" class="default-btn slider-one__text">Contact Us <i class="fas fa-long-arrow-alt-right"></i> </a> -->
                   <!-- /.slider-one__text -->
-               </div>
+             <!--   </div> -->
                <!-- /.container -->
-            </div>
+           <!--  </div> -->
             <!-- /.item -->
-         </div>
-      </section>
+         <!-- </div>
+      </section> -->
       <!-- ============= Slider End =============-->
       <!-- ============= Features Start =============-->
       <section class="features-sec mt-minus-70 pt-0 ">
@@ -124,32 +127,32 @@
                <div class="col-lg-3 col-sm-6 p-0">
                   <div class="single-offer">
                      <i class="icon mbri-laptop"></i>
-                     <h3>Display Repair</h3>
-                     <p>Lorem ipsum dolor sit amet csectetur adipiscing elit sed do eiusmod tem incididunt</p>
+                     <h3>TARJETA 1 </h3>
+                     <p>descripcion tarjeta 1</p>
                      <a class="circle-read-more" href="#"> <i class="ti-angle-right"></i> </a>
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6 p-0">
                   <div class="single-offer">
                      <i class="icon mbri-camera"></i>
-                     <h3>Camera Fixing</h3>
-                     <p>Lorem ipsum dolor sit amet csectetur adipiscing elit sed do eiusmod tem incididunt</p>
+                     <h3>TARJETA 2 </h3>
+                     <p>DESCRIPCION TARJETA 2</p>
                      <a class="circle-read-more" href="#"> <i class="ti-angle-right"></i> </a>
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6 p-0">
                   <div class="single-offer">
                      <i class="icon mbri-android"></i>
-                     <h3>Software Update</h3>
-                     <p>Lorem ipsum dolor sit amet csectetur adipiscing elit sed do eiusmod tem incididunt</p>
+                     <h3>TARJETA 3</h3>
+                     <p>DESCRIPCION TARJETA 3</p>
                      <a class="circle-read-more" href="#"> <i class="ti-angle-right"></i> </a>
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6 p-0">
                   <div class="single-offer">
                      <i class="icon mbri-desktop"></i>
-                     <h3>Desktop Service</h3>
-                     <p>Lorem ipsum dolor sit amet csectetur adipiscing elit sed do eiusmod tem incididunt</p>
+                     <h3>TARJETA 4</h3>
+                     <p>DESCRIPCION TARJETA 4</p>
                      <a class="circle-read-more" href="#"> <i class="ti-angle-right"></i> </a>
                   </div>
                </div>
@@ -158,7 +161,7 @@
       </section>
       <!-- ============= Features End =============-->
       <!-- ============= About Start =============-->
-      <section class="section_70" data-scroll-index="1">
+      <!-- <section class="section_70" data-scroll-index="1">
          <div class="container wow fadeInRight">
             <div class="section-title">
                <span>What We Do </span>
@@ -188,10 +191,10 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= About End =============-->
       <!-- ============= Services Start =============-->
-      <section class="services-sec service-area-two section_70" data-scroll-index="2">
+      <!-- <section class="services-sec service-area-two section_70" data-scroll-index="2">
          <div class="container">
             <div class="section-title">
                <span>What We Do </span>
@@ -284,10 +287,10 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Services End =============-->
       <!-- ============= Team Start =============-->
-      <section class="section_70 section-content-block section-secondary-bg"  data-scroll-index="3">
+      <!-- <section class="section_70 section-content-block section-secondary-bg"  data-scroll-index="3">
          <div class="container">
             <div class="section-title">
                <span>Technical Team</span>
@@ -376,47 +379,47 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Team End =============-->
       <!-- ============= Counter Start =============-->
-      <section class="counter-section" style="background-image: url(images/counter_bg.jpg)">
-         <div class="container">
+      <!-- <section class="counter-section" style="background-image: url(images/counter_bg.jpg)">
+         <div class="container"> -->
             <!-- Sec Title -->
-            <div class="section-title">
+           <!--  <div class="section-title">
                <h2>Our Team Result</h2>
-            </div>
+            </div> -->
             <!-- Fact Counter -->
-            <div class="fact-counter">
-               <div class="row clearfix">
+            <!-- <div class="fact-counter">
+               <div class="row clearfix"> -->
                   <!--Column-->
-                  <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                  <!-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                      <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="count-outer count-box">
                            <span class="count-text" data-speed="3000ms" data-stop="105">0</span>+
                            <div class="counter-title">Team Members</div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--Column-->
-                  <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                 <!--  <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                      <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="count-outer count-box">
                            <span class="count-text" data-speed="2000" data-stop="215">0</span>+
                            <div class="counter-title">Client’s Feedback</div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--Column-->
-                  <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                  <!-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                      <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
                         <div class="count-outer count-box">
                            <span class="count-text" data-speed="2000" data-stop="15">0</span>+
                            <div class="counter-title">Winning Awards</div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--Column-->
-                  <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+               <!--    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                      <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
                         <div class="count-outer count-box">
                            <span class="count-text" data-speed="1500" data-stop="310">0</span>+
@@ -427,13 +430,13 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Counter End =============-->
       <!-- ============= Pricing Start =============-->
-      <section class="pricing-sec section_70" data-scroll-index="4">
-         <div class="container">
+     <!--  <section class="pricing-sec section_70" data-scroll-index="4">
+         <div class="container"> -->
             <!-- Sec Title -->
-            <div class="section-title">
+      <!--       <div class="section-title">
                <span>Pricing plan</span>
                <h2>Affordable pricing</h2>
             </div>
@@ -500,21 +503,21 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Pricing End =============-->
       <!-- ============= Testimonials Start =============-->
-      <section class="testimonial-section" data-scroll-index="5">
+    <!--   <section class="testimonial-section" data-scroll-index="5">
          <div class="patern-layer" style="background-image: url(images/pattern-bg.png)"></div>
-         <div class="container">
+         <div class="container"> -->
             <!-- Sec Title -->
-            <div class="section-title">
+           <!--  <div class="section-title">
                <span>Testimonial</span>
                <h2>What Clients Says</h2>
-            </div>
+            </div> -->
             <!-- Product Thumbs Carousel -->
-            <div class="testimonial-outer wow fadeInRight">
+        <!--     <div class="testimonial-outer wow fadeInRight"> -->
                <!-- Product Thumbs Carousel -->
-               <div class="client-thumb-outer">
+             <!--   <div class="client-thumb-outer">
                   <div class="client-thumbs-carousel owl-carousel owl-theme">
                      <div class="thumb-item">
                         <figure class="thumb-box"><img src="images/author-1.jpg" alt="author"></figure>
@@ -559,11 +562,37 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> -->
                <!-- Client Testimonial Carousel -->
-               <div class="client-testimonial-carousel owl-carousel owl-theme">
+               <!-- <div class="client-testimonial-carousel owl-carousel owl-theme"> -->
                   <!--Testimonial Block -->
-                  <div class="testimonial-block">
+                 <!--  <div class="testimonial-block">
+                     <div class="inner-box">
+                        <div class="text">I greatly appreciate working with the professional and dedicated <br>
+                           teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
+                           mutually successful business.
+                        </div>
+                        <div class="quote-outer">
+                           <div class="quote-icon fas fa-quote-left"></div>
+                        </div>
+                        <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
+                     </div>
+                  </div> -->
+                  <!--Testimonial Block -->
+                 <!--  <div class="testimonial-block">
+                     <div class="inner-box">
+                        <div class="text">I greatly appreciate working with the professional and dedicated <br>
+                           teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
+                           mutually successful business.
+                        </div>
+                        <div class="quote-outer">
+                           <div class="quote-icon fas fa-quote-left"></div>
+                        </div>
+                        <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
+                     </div>
+                  </div> -->
+                  <!--Testimonial Block -->
+                 <!--  <div class="testimonial-block">
                      <div class="inner-box">
                         <div class="text">I greatly appreciate working with the professional and dedicated <br>
                            teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
@@ -575,8 +604,8 @@
                         <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
                      </div>
                   </div>
-                  <!--Testimonial Block -->
-                  <div class="testimonial-block">
+ -->                  <!--Testimonial Block -->
+                  <!-- <div class="testimonial-block">
                      <div class="inner-box">
                         <div class="text">I greatly appreciate working with the professional and dedicated <br>
                            teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
@@ -587,9 +616,9 @@
                         </div>
                         <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--Testimonial Block -->
-                  <div class="testimonial-block">
+                 <!--  <div class="testimonial-block">
                      <div class="inner-box">
                         <div class="text">I greatly appreciate working with the professional and dedicated <br>
                            teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
@@ -600,35 +629,9 @@
                         </div>
                         <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--Testimonial Block -->
-                  <div class="testimonial-block">
-                     <div class="inner-box">
-                        <div class="text">I greatly appreciate working with the professional and dedicated <br>
-                           teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
-                           mutually successful business.
-                        </div>
-                        <div class="quote-outer">
-                           <div class="quote-icon fas fa-quote-left"></div>
-                        </div>
-                        <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
-                     </div>
-                  </div>
-                  <!--Testimonial Block -->
-                  <div class="testimonial-block">
-                     <div class="inner-box">
-                        <div class="text">I greatly appreciate working with the professional and dedicated <br>
-                           teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
-                           mutually successful business.
-                        </div>
-                        <div class="quote-outer">
-                           <div class="quote-icon fas fa-quote-left"></div>
-                        </div>
-                        <div class="rating"> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> </div>
-                     </div>
-                  </div>
-                  <!--Testimonial Block -->
-                  <div class="testimonial-block">
+                  <!-- <div class="testimonial-block">
                      <div class="inner-box">
                         <div class="text">I greatly appreciate working with the professional and dedicated <br>
                            teams at Facmaster. I feel that they strongly recognize the opportunities to partner together for <br>
@@ -643,20 +646,20 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Testimonials End =============-->
       <!-- ============= Blog Start =============-->
-      <section class="blog-sec section_70" data-scroll-index="6">
-         <div class="container">
+      <!-- <section class="blog-sec section_70" data-scroll-index="6">
+         <div class="container"> -->
             <!-- Sec Title -->
-            <div class="section-title">
+           <!--  <div class="section-title">
                <span>Latest Articles</span>
                <h2>Our Latest Blog</h2>
             </div>
             <div class="row">
-               <div class="col-lg-4 col-md-6 wow fadeInLeft">
+               <div class="col-lg-4 col-md-6 wow fadeInLeft"> -->
                   <!-- Single Blog Sec -->
-                  <div class="single-blog">
+                <!--   <div class="single-blog">
                      <a href="#"> <img src="images/blog-img1.jpg" alt="blog"> </a>
                      <div class="blog-content">
                         <a class="user" href="#"> <i class="bx bx-user"></i> Admin </a>
@@ -668,9 +671,9 @@
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-6 wow fadeInLeft">
+               <div class="col-lg-4 col-md-6 wow fadeInLeft"> -->
                   <!-- Single Blog Sec -->
-                  <div class="single-blog">
+                 <!--  <div class="single-blog">
                      <a href="#"> <img src="images/blog-img2.jpg" alt="blog"> </a>
                      <div class="blog-content">
                         <a class="user" href="#"> <i class="bx bx-user"></i> Admin </a>
@@ -682,9 +685,9 @@
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-6 wow fadeInLeft">
+               <div class="col-lg-4 col-md-6 wow fadeInLeft"> -->
                   <!-- Single Blog Sec -->
-                  <div class="single-blog">
+              <!--     <div class="single-blog">
                      <a href="#"> <img src="images/blog-img3.jpg" alt="blog"> </a>
                      <div class="blog-content">
                         <a class="user" href="#"> <i class="bx bx-user"></i> Admin </a>
@@ -698,10 +701,10 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- ============= Blog End =============-->
       <!--===========Contact Area Start ===========-->
-      <section class="contact_area section_70" data-scroll-index="7">
+      <!-- <section class="contact_area section_70" data-scroll-index="7">
          <div class="container wow fadeInRight">
             <div class="row">
                <div class="col-lg-5 wow fadeInLeft">
@@ -755,16 +758,16 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!--=========== Contact Area End=========== -->
       <!--=========== Footer End=========== -->
-      <footer class="main-footer" data-scroll-index="7" style="background-image: url(images/footer-bg.jpg)">
-         <div class="container wow fadeInLeft">
+     <!--  <footer class="main-footer" data-scroll-index="7" style="background-image: url(images/footer-bg.jpg)">
+         <div class="container wow fadeInLeft"> -->
             <!--Widgets Section-->
-            <div class="widgets-section">
-               <div class="row clearfix">
+            <!-- <div class="widgets-section">
+               <div class="row clearfix"> -->
                   <!-- Footer Column -->
-                  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                 <!--  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                      <div class="footer-widget logo-widget">
                         <div class="logo"> <a href="index.html"><img src="images/footer-logo.png" alt="Logo" /></a> </div>
                         <div class="text">We provide expert Business Coaching to both individuals and businesses. With over 30 years of experience we’ll ensure that you’re always getting the best guidance from the top people in the entire industry.</div>
@@ -773,15 +776,15 @@
                            <li><span class="icon mbri-home"></span> 52 Tailstoi Town 546 IT, NYC </li>
                         </ul>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- Footer Column -->
-                  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                  <!-- <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                      <div class="footer-widget news-widget">
                         <div class="footer-title">
                            <h4>Latest News</h4>
-                        </div>
+                        </div> -->
                         <!-- Footer Column -->
-                        <div class="widget-content">
+                       <!--  <div class="widget-content">
                            <div class="post">
                               <div class="thumb"><a href="#"><img src="images/post-thumb-1.jpg" alt="thumb"></a></div>
                               <h5><a href="#">Retail banks wakeup to digital</a></h5>
@@ -794,9 +797,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- Footer Column -->
-                  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                 <!--  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                      <div class="footer-widget newsletter-widget">
                         <div class="footer-title">
                            <h4>Newsletter</h4>
@@ -822,8 +825,8 @@
                   </div>
                </div>
             </div>
-         </div>
-         <div class="footer-bottom wow fadeInTop">
+         </div> -->
+       <!--   <div class="footer-bottom wow fadeInTop">
             <div class="container">
                <div class="row">
                   <div class="col-lg-5">
@@ -840,30 +843,30 @@
                   </div>
                </div>
             </div>
-         </div>
-      </footer>
+         </div> -->
+     <!--  </footer> -->
       <!-- jQuery Min JS -->
-      <script src="js/jquery-min.js"></script>
+     <!--  <script src="js/jquery-min.js"></script> -->
       <!-- Popper Min JS -->
-      <script src="js/popper.min.js"></script>
+     <!--  <script src="js/popper.min.js"></script> -->
       <!-- Bootstrap Min JS -->
-      <script src="js/bootstrap.min.js"></script>
+      <!-- <script src="js/bootstrap.min.js"></script> -->
       <!--ScrollIt js-->
-      <script src="js/scrollIt.min.js"></script>
+      <!-- <script src="js/scrollIt.min.js"></script> -->
       <!-- Owl Carousel Min JS -->
-      <script src="js/owl.carousel.min.js"></script>
+      <!-- <script src="js/owl.carousel.min.js"></script> -->
       <!-- Plugins JS -->
-      <script src="js/plugins.js"></script>
+     <!--  <script src="js/plugins.js"></script> -->
       <!-- Appear JS -->
-      <script src="js/appear.js"></script>
+     <!--  <script src="js/appear.js"></script> -->
       <!-- Popup JS -->
-      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- <script src="js/jquery.magnific-popup.min.js"></script> -->
       <!-- Animation JS -->
-      <script src="js/init.js"></script>
-      <script src="js/wow.min.js"></script>
+      <!-- <script src="js/init.js"></script>
+      <script src="js/wow.min.js"></script> -->
       <!-- Custom JS -->
-      <script src="js/custom.js"></script>
-   </body>
+      <!-- <script src="js/custom.js"></script>
+   </body> -->
 </html>
 
 
