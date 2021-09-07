@@ -1,3 +1,4 @@
+
 <h1>Appointments</h1>
 
 <li class="nav-item active">
@@ -31,4 +32,38 @@ El técnico podrá cambiar estatus pero no eliminar la cita
   </br>
   <%= button_to "Crear Nueva Orden de Trabajo", new_path, class:"btn btn-primary", :method => :get %>
 </div>
- -->
+
+<h3> Listado de Citas </h3>
+</br>
+<div class="container">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id de la cita</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Status</th>
+          <th scope="col">Email del cliente</th>
+            <th scope="col"></th>
+              <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @appointments.each  do |a| %>
+          <th scope="col">Id de la cita</th>
+          <tr>
+            <th scope="row"><%= a.id %></th>
+            <td><%= a.description %></td>
+            <td><%= a.status %></td>
+            <td><%= a.user.email%></td>
+            <td><%= a.start_date %></td>
+            <td><%= a.end_date %></td>
+
+    <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-primary", :method => :get %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </br>
+
+</div>
+
