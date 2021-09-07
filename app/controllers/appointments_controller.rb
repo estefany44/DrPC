@@ -15,16 +15,16 @@ class AppointmentsController < ApplicationController
   
   def create 
     @appointment = Appointment.new(appointment_params)
-    #@appointment.user = current_user
+    @appointment.user = current_user
    #authorize @appointment
    @appointment.save
-    #if @appointment.save
-      redirect_to appointment_path
-    # else 
-    #   @appointment.user = nil
-    #   @appointments = current_user.appointments.select { |a| a.persisted? }
-    #   render :new
-    #end
+    if @appointment.save
+      redirect_to appointment_path(@appointment)
+    else 
+      @appointment.user = nil
+      @appointments = current_user.appointments.select { |a| a.persisted? }
+      render :new
+    end
   end
 
   def edit 
@@ -47,7 +47,7 @@ class AppointmentsController < ApplicationController
   private
     
   def set_appointment
-    @appointment = appointment.find(params[:id])
+    @appointment = Appointment.find(params[:id])
     
     #@appointment = current_user.appointments.find_by(id: params[:id])
       # if @appointment.nil? 
