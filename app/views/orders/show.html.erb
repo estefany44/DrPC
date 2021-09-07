@@ -1,34 +1,20 @@
 </br>
-<h2> Detalle OT  N°<%=@order.id%></h2>
+<h3> Detalle OT  N°<%=@order.id%></h3>
 </br>
+
 <div class="container">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Diagnostico</th>
-          <th scope="col">Solución</th>
-          <th scope="col">Status</th>
-          <th scope="col">Delivery Date</th>
-          <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <th scope="row"><%= @order.id %></th>
-        <td><%= @order.diagnostic %></td>
-        <td><%= @order.solution %></td>
-        <td><%= @order.status %></td>
-        <td><%= @order.delivery_date %></td>
-        <td><%= link_to "Borrar", order_path(@order), method: :delete, class:"btn btn-outline-primary"%></td>
-        </tr>
-         </br>
-        </tbody>
-    </table>
-    </br>
-    </br>
-    </br>
-    <div>
-    <div>
-    <%= button_to "Crear Nueva Orden de Trabajo", new_orders_path, class:"btn btn-primary", :method => :get %>
-    <%= link_to "Volver al listado", orders_path, class:"btn btn-outline-primary"  %>
+  Diagnostic: <%= @order.diagnostic %></br>
+  Solution: <%= @order.solution %></br>
+  Price: <%= @order.price %></br>
+  Delivery Date: <%= @order.delivery_date %></br>
+  Status: <%= @order.status%></br>
+  Appointment: <%= @order.appointment_id %></br>
+</br>
+</br>
+<div alignment="right">
+<%= button_to "Borrar", order_path(@order), method: :delete, class:"btn btn-danger", data: { confirm: "Ud. está seguro?" }%>
 </div>
+</br><%= link_to "Volver al listado", orders_path %>
+</div>
+
+
