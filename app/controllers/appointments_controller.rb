@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  around_action :use_current_timezone
+  #around_action :use_current_timezone
     
   def index 
     @appointments = Appointment.all
@@ -49,25 +49,24 @@ class AppointmentsController < ApplicationController
   private
     
   def set_appointment
-    @appointment = Appointment.find(params[:id])
-    
-    #@appointment = current_user.appointments.find_by(id: params[:id])
-      # if @appointment.nil? 
-      #   flash[:error] = "Appointment not found."
-      #   redirect_to appointments_path
-      # end
-    end
-    
-    # def set_appointments
-    #   @appointments = current_user.appointments.order(appointment_time: :desc)
+  @appointment = Appointment.find(params[:id])
+  
+  #@appointment = current_user.appointments.find_by(id: params[:id])
+    # if @appointment.nil? 
+    #   flash[:error] = "Appointment not found."
+    #   redirect_to appointments_path
     # end
-    
-    def appointment_params
-      params.require(:appointment).permit(:user_id, :description, :status)
-    end
-
-    def use_current_timezone(&block)
-      Time.use_zone(current_user.timezone, &block)
-    end
-    
   end
+  
+  # def set_appointments
+  #   @appointments = current_user.appointments.order(appointment_time: :desc)
+  # end
+  
+  def appointment_params
+    params.require(:appointment).permit(:user_id, :start_date, :description, :status, :time)
+  end
+
+  # def use_current_timezone(&block)
+  #   Time.use_zone(current_user.timezone, &block)
+  # end
+end

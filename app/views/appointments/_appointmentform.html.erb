@@ -1,5 +1,6 @@
 <%= simple_form_for(appointment) do |t| %>
 <%= t.input :description %>
-<%= t.input :start_date, as: :date_time_picker %>
+<%= t.input :start_date, as: :string, input_html: {type: :date} %>
+<%= t.input :time, collection: ['9hs a 10hs', '10hs a 11hs'] %>
 <%= t.submit %>
 <% end %>
