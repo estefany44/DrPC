@@ -1,1 +1,28 @@
-// Specific CSS for your home-page
+.header {
+    align-items: center;
+    background: #2d394b;
+    display: flex;
+    height: 60px;
+    left: 0;
+    padding: 10px 70px 10px 30px;
+    position: -webkit-sticky;
+    position: sticky;
+    right: 0;
+    top: 0;
+}
+html *, html ::after, html ::before {
+    box-sizing: inherit;
+}
+html body {
+    -moz-osx-font-smoothing: grayscale;
+    color: #243238;
+    font-size: 16px;
+    line-height: 1.5;
+}
+body {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}// Specific CSS for your home-page
+
+elemento {
+    width: 779px;
+}

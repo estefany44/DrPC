@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  around_action :use_current_timezone
     
   def index 
     @appointments = Appointment.all
@@ -62,7 +63,11 @@ class AppointmentsController < ApplicationController
     # end
     
     def appointment_params
-      params.require(:appointment).permit(:user_id, :descritpion, :status)
+      params.require(:appointment).permit(:user_id, :description, :status)
+    end
+
+    def use_current_timezone(&block)
+      Time.use_zone(current_user.timezone, &block)
     end
     
   end

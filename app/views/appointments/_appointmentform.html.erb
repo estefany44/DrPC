@@ -1,5 +1,5 @@
-<%= simple_form_for (appointment) do |t| %>
+<%= simple_form_for(appointment) do |t| %>
 <%= t.input :description %>
-
+<%= t.input :start_date, as: :date_time_picker %>
 <%= t.submit %>
 <% end %>
