@@ -1,7 +1,11 @@
 <div class="appointment">
   <%= @appointment.description %>
   <%= @appointment.status %>
-  <%= link_to "Volver citas", appointments_path  %>
-<%= link_to "Borrar", appointment_path(@appointment), method: :delete %>
+  <%= link_to "Volver a inicio", root_path  %>
+<%= link_to "Eliminar cita", appointment_path(@appointment), method: :delete %>
 
 </div>
+<% current_user.appointments.each do |appointment| %>
+<%=appointment.description%>
+<%=appointment.created_at%>
+<% end %>
