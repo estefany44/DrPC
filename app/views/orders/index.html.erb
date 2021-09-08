@@ -1,6 +1,6 @@
 <div class="py-5">
   <div class="align-items-center py-3" >
-    <h4><strong>Listado de Ordenes de Trabajo OT</strong></h4>
+     <h4><strong>Listado de Ordenes de Trabajo OT</strong> | <%= current_user.first_name %>| <%= current_user.client %> | <%= current_user.id %> | </h4>
   </div>
   <div class="align-items-right">
     <%= link_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %>
