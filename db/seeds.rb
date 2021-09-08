@@ -7,7 +7,8 @@ User.create(first_name: "Aministrador", last_name: "DrPC", rut: "9999999-9", cli
 User.create(first_name: "Cliente", last_name: "Nuevo", rut: "9999999-9", client: true, address: "Avda luz 258", phone: "999999", email: "cliente@dominio.com", password: "password")
 puts "Creando Appoitnments"
 
-Appointment.create(user: User.last, description: "Descripcion", status: "Estado de la reserva")
+Appointment.create(user: User.first, description: "Descripcion", status: "Estado de la reserva")
+Appointment.create(user:User.last, description: "No Enciende", status: "POR CONFIRMAR")
 puts "Terminado"
 
 Appointment.create(user: User.last, description: "No enciende", status: "Pendiente")
