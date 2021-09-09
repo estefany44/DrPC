@@ -1,69 +1,43 @@
+<div class="py-5">
+  <div class="align-items-center py-3" >
+    <h4><strong>Listado de Citas</strong></h4>
+  </div>
 
-<h1>Appointments</h1>
+  <div class="align-items-right">
+    <%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
+  </div>
 
-<li class="nav-item active">
-        <a class="nav-link" <%= link_to "new", new_appointment_path %></a>
-      </li>
-
-<!-- un usuario puede acceder a todas las vistas menos a la OT y al listado de appointments
-un usuario puede hacer reservas, mientras esta esté en curso no puede hacer otra
-a menos que si la elimina puede crear una nueva
-
-cuando el usuario le click a 'ver mi orden' podrá ver el detalle con HORA Y FECHA
-y tendrà opcion a ver el historico de sus appointment
-
-El tecnico podrá ver el listado general de las citas y OT
-
-El técnico podrá cambiar estatus pero no eliminar la cita
-
- -->
-<div class="container">
-      <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID usuario</th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Estado de la reserva</th>
-          <th scope="col">Fecha</th>
-          <th scope="col"></th>
-      </tr>
-      </thead>
-      </table>
-  </br>
-  <%= button_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %>
-</div>
-
-<h3> Listado de Citas </h3>
-</br>
-<div class="container">
-      <table class="table table-striped">
+<div class="container-sm py-3">
+  <div class="table-responsive-sm">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">Id de la cita</th>
           <th scope="col">Descripcion</th>
           <th scope="col">Status</th>
           <th scope="col">Email del cliente</th>
-            <th scope="col"></th>
-              <th scope="col"></th>
-      </tr>
-      </thead>
-      <tbody>
-        <% @appointments.each  do |a| %>
-          <th scope="col">Id de la cita</th>
-          <tr>
-            <th scope="row"><%= a.id %></th>
-            <td><%= a.description %></td>
-            <td><%= a.status %></td>
-            <td><%= a.user.email%></td>
-            <td><%= a.start_date %></td>
-            <td><%= a.end_date %></td>
-
-    <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-primary", :method => :get %></td>
+          <th scope="col">Fecha</th>
+          <th scope="col"></th>
         </tr>
-        <% end %>
+      </thead>      
+        <tbody>
+          <% @appointments.each  do |a| %>
+            <tr>
+              <th scope="row"><%= a.id %></th>
+              <td><%= a.description %></td>
+              <td><%= a.status %></td>
+              <td><%= a.user.email%></td>
+              <td><%= a.start_date %></td>
+              <td><%= a.end_date %></td>
+              <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <td><%= button_to "crear OT", new_order_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <td><%= link_to "Eliminar cita", appointment_path(a),class:"btn btn-outline-primary", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
-  </br>
-
+  </div>
 </div>
+
+
 
