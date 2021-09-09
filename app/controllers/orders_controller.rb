@@ -1,8 +1,18 @@
 class OrdersController < ApplicationController
+
 before_action :set_order, only: [:show,:edit,:update,:destroy]
 
+
   def index
-    @orders = Order.all.order("id desc")
+
+      if current_user.client == true
+
+        @appointment_rel = Appointment.where(user_id: current_user.id).last
+        @orders = Order.all.where(appointment_id: @appointment_rel.id)
+      else
+        @orders = Order.all.order("id desc")
+
+      end
   end
 
   def show
@@ -43,4 +53,5 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
   def set_order
     @order = Order.find(params[:id])
   end
+
 end

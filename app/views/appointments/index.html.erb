@@ -30,7 +30,7 @@
               <td><%= a.start_date %></td>
               <td><%= a.end_date %></td>
               <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-outline-primary", :method => :get %></td>
-              <td><%= button_to "crear OT", new_order_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <td><%= button_to "Crear OT", new_order_path(a), class:"btn btn-outline-primary", :method => :get %></td>
               <td><%= link_to "Eliminar cita", appointment_path(a),class:"btn btn-outline-primary", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
             </tr>
           <% end %>
@@ -38,6 +38,4 @@
       </table>
   </div>
 </div>
-
-
 

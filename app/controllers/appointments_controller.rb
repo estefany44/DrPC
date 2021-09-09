@@ -4,15 +4,16 @@ class AppointmentsController < ApplicationController
     
   def index 
     @appointments = Appointment.all
-    # if current_user.client == true
+    
+    if current_user.client == true
 
-    #   @appointment_rel = Appointment.where(user_id: current_user.id).last
-    #   @orders = Order.all.where(appointment_id: @appointment_rel.id)
-    # else
-    #   @appointment = Appointment.last
-    #   @orders = Order.all.order("id desc")
+      @appointment_rel = Appointment.where(user_id: current_user.id).last
+      @orders = Order.all.where(appointment_id: @appointment_rel.id)
+    else
+      @appointment = Appointment.last
+      @orders = Order.all.order("id desc")
 
-    # end
+    end
   end 
   
   def show
