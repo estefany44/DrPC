@@ -1,6 +1,8 @@
 <%= simple_form_for(appointment) do |t| %>
-<%= t.input :description %>
-<%= t.input :start_date, as: :string, input_html: {type: :date} %>
-<%= t.input :time, collection: ['9hs a 10hs', '10hs a 11hs'] %>
-<%= t.submit %>
+<%= t.index  %>
+<%= t.input :description, required: true %>
+<%= t.input :start_date, required: true, as: :string, input_html: {type: :date} %>
+<%= t.input :time, required: true, collection: ['9:00hs', '10:00hs', '11:00hs', '14:00hs', '15:00hs', '16:00hs'] %>
+<%= t.submit "guardar", :class => 'guardar' %>
 <% end %>
+
