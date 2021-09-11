@@ -1,11 +1,36 @@
-<div class="appointment">
-  <%= @appointment.description %>
-  <%= @appointment.status %>
-  <%= link_to "Volver a inicio", root_path  %>
-<%= link_to "Eliminar cita", appointment_path(@appointment), method: :delete %>
 
+<div class="containerpy-3 align-items-left py-3">
+  <h4><strong> Detalle de la cita </strong></h3>
 </div>
-<% current_user.appointments.each do |appointment| %>
-<%=appointment.description%>
-<%=appointment.created_at%>
-<% end %>
+
+<div class="container overflow-hidden border bg-light">
+  <div class="row gx-5 ">
+    <div class="col">
+     <div class="p-2 "><strong>Descripción: </strong> <%= @appointment.description %></div>
+    </div>
+    <div class="col">
+      <div class="p-2 "><strong>ID: </strong> <%= @appointment.id %></div>
+    </div>
+  </div>
+   <div class="row gx-5 border-top">
+    <div class="col">
+     <div class="p-2 "><strong>Fecha de la cita: </strong><%= @appointment.start_date %></div>
+    </div>
+    <div class="col">
+      <div class="p-2 "><strong>Hora de la cita: </strong> <%= @appointment.time %></div>
+    </div>
+  </div>
+  <div class="row gx-5 border-top">
+    <div class="col ">
+     <div class="p-2 "><strong>Estado: </strong><%= @appointment.status%></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-sm-3 p-3">
+  <a class="nav-link" ><%= link_to "Editar cita", edit_appointment_path %></a>
+  <a class="nav-link" ><%= link_to "Volver a inicio", root_path  %></a>
+  <a class="nav-link" ><%= link_to "Volver al listado de citas", appointments_path  %></a>
+</div>
