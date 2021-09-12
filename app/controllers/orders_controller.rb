@@ -4,16 +4,12 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
 
 
   def index
-
-
       if current_user.client == true
 
-
         @appointment_rel = Appointment.where(user_id: current_user.id).last
-        @orders = Order.all.where(appointment_id: @appointment_rel.id)
+        @orders = Order.all.where(appointment_id: @appointment_rel.id).order("id desc")
       else
         @orders = Order.all.order("id desc")
-
       end
   end
 
@@ -55,5 +51,7 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
   def set_order
     @order = Order.find(params[:id])
   end
+
+
 
 end

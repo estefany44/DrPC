@@ -1,15 +1,10 @@
 
 <div class="py-5">
   <div class="align-items-center py-3" >
-<<<<<<< HEAD
-     <h4><strong>Listado de Ordenes de Trabajo OT</strong> | <%= current_user.first_name %>| <%= current_user.client %> | <%= current_user.id %> | </h4>
-=======
-    <h4><strong>Listado de Ordenes de Trabajo OT</strong> | <%= current_user.first_name %>| <%= current_user.client %> | <%= current_user.id %> | </h4>
-
->>>>>>> 91ca0e58a3440301c71366bdab2bd90322f59a33
+    <h4><strong>Listado de Ordenes de Trabajo OT</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
   </div>
   <div class="align-items-right">
-    <%= link_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %>
+   <!--  <%= link_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %> -->
     <%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
   </div>
 </div>
@@ -35,7 +30,9 @@
             <td><%= ot.solution %></td>
             <td><%= ot.status %></td>
             <td><%= ot.delivery_date %></td>
+             <% if current_user.client == false %>
             <td><%= button_to "Editar", edit_order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
+             <% end %>
             <td><%= button_to "Detalle", order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
           </tr>
         <% end %>
