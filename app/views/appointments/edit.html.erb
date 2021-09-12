@@ -1,9 +1,7 @@
-<div class="row">
-  <div class="col-md-4">
-    <h1>Edit Appointment</h1>
-    <%= render partial: "appointmentform", locals: { appointment: @appointment } %>
+<div class="container">
     <p>
-      <%= link_to "Delete", appointment_path(@appointment), method: :delete, data: { confirm: "Are you sure you want to delete this appointment?" } %>
+    <%= render "appointmentform", appointment: @appointment %>
+      <%= link_to "Eliminar cita", appointment_path(@appointment), method: :delete, data: { confirm: "¿eliminar cita?"} %>
+      <%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
     </p>
-  </div>
 </div>
