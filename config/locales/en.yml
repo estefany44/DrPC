@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  devise:
+    sessions:
+      new:
+        sign_in:
+          Iniciar sesión
+

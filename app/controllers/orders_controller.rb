@@ -15,11 +15,14 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
 
   def show
 
-
   end
 
   def new
-    @order = Order.new
+       if current_user.client == true
+        redirect_to appointments_path
+       else
+        @order = Order.new
+      end
   end
 
   def create
@@ -51,7 +54,4 @@ before_action :set_order, only: [:show,:edit,:update,:destroy]
   def set_order
     @order = Order.find(params[:id])
   end
-
-
-
 end
