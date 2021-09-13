@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <title>Dr Pc</title>
@@ -12,9 +13,9 @@
    <nav class="navbar navbar-expand-lg">
       <div class="container">
       <!-- LOGO -->
-        <a class="navbar-brand logo" href="index.html">
-          <img src="images/logo.png" alt="Logo">
-        </a>
+        <div class="logo-navbar">
+          <h1>Doctor PC</h1>
+        </div>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
           </button>
@@ -24,13 +25,13 @@
                   <a class="nav-link" <%= link_to "Home", root_path %></a>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" <%= link_to "appointments", appointments_path %></a>
+                    <a class="nav-link" <%= link_to "Citas", appointments_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" <%= link_to "orders", orders_path %></a>
+                     <a class="nav-link" <%= link_to "Ordenes", orders_path %></a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" <%= link_to "Services", services_path %></a>
+                     <a class="nav-link" <%= link_to "Servicios", services_path %></a>
                   </li>
                 <!--   <li class="nav-item">
                      <a class="nav-link" href="#" data-scroll-nav="4">PRICING</a>
@@ -53,9 +54,9 @@
       </nav>
   <div class="banner">
     <div class="container">
-      <h1>Dc Pc</h1>
-      <p>arreglar pc</p>
-      <a class="btn-primary" href="#">Appointment</a>
+      <h1>Dr. Pc</h1>
+      <p>Arreglamos tu pc</p>
+      <a class="btn-primary" href="#">Agendar</a>
     </div>
   </div>
 
@@ -882,42 +883,4 @@
       <!-- <script src="js/custom.js"></script>
    </body> -->
 </html>
-
-<<<<<<< HEAD
-
-<%# <html lang="en">
-	<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DrPC</title>
-	</head>
-<body>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.farmalatina.cl/wp-content/uploads/2020/06/ServTecnico.jpg)">
-  <div class="container-fluid">
-  <div class="container">
-<div class="svg-wrap">
-  
-  <h1>Reparacion de articulos tecnologicos <strong></strong> <strong></strong>!</h1>
- 
-</div>
-    <td><%= button_to "Agendar cita", new_appointment_path, class:"btn btn-primary", :method => :get %></td>
-    <%# </div>
-  </div>
-</div>
-
-
-<div class="footer">
-  <div class="footer-links">
-
-  
-    <a class="btn-flat" href="#">contáctanos</a>
-    <a class="btn-gradient" href="#">Síguenos</a>
-
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-
-  </div>
-=======
->>>>>>> ab413355b9ef204bbb8c8adf12d1f9efc5b9937a
 
