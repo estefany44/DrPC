@@ -1,17 +1,28 @@
 class OrdersController < ApplicationController
+
 before_action :set_order, only: [:show,:edit,:update,:destroy]
 
+
   def index
-    @orders = Order.all.order("id desc")
+      if current_user.client == true
+
+        @appointment_rel = Appointment.where(user_id: current_user.id).last
+        @orders = Order.all.where(appointment_id: @appointment_rel.id).order("id desc")
+      else
+        @orders = Order.all.order("id desc")
+      end
   end
 
   def show
 
-
   end
 
   def new
-    @order = Order.new
+       if current_user.client == true
+        redirect_to appointments_path
+       else
+        @order = Order.new
+      end
   end
 
   def create
