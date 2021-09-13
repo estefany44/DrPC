@@ -1,14 +1,21 @@
 class AppointmentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  #around_action :use_current_timezone
     
   def index 
     @appointments = Appointment.all
+    
+    if current_user.client == true
+
+      @appointment_rel = Appointment.where(user_id: current_user.id).last
+      @orders = Order.all.where(appointment_id: @appointment_rel.id)
+    else
+      @appointment = Appointment.last
+      @orders = Order.all.order("id desc")
+
+    end
   end 
   
-  def show 
-    # hacer un show para user y uno para tecnico
+  def show
   end
   
   def new 
@@ -18,8 +25,7 @@ class AppointmentsController < ApplicationController
   def create 
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
-   #authorize @appointment
-   @appointment.save
+    @appointment.save
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else 
@@ -33,13 +39,13 @@ class AppointmentsController < ApplicationController
   end
   
   def update 
-    #if 
+    if 
       @appointment.update(appointment_params)
       redirect_to appointments_path
-    # else 
-    #   set_appointments
-    #   render :edit
-    # end
+    else 
+      set_appointments
+      render :edit
+    end
   end
   
   def destroy 
@@ -47,26 +53,22 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_path
   end  
   private
+
+  def appointment_params
+    params.require(:appointment).permit(:user_id, :start_date, :description, :status, :time)
+  end
     
   def set_appointment
   @appointment = Appointment.find(params[:id])
   
-  #@appointment = current_user.appointments.find_by(id: params[:id])
-    # if @appointment.nil? 
-    #   flash[:error] = "Appointment not found."
-    #   redirect_to appointments_path
-    # end
+  # @appointment = current_user.appointments.find_by(id: params[:id])
+  #   if @appointment.nil? 
+  #     flash[:error] = "Appointment not found."
+  #     redirect_to appointments_path
+  #   end
   end
   
   # def set_appointments
   #   @appointments = current_user.appointments.order(appointment_time: :desc)
-  # end
-  
-  def appointment_params
-    params.require(:appointment).permit(:user_id, :start_date, :description, :status, :time)
-  end
-
-  # def use_current_timezone(&block)
-  #   Time.use_zone(current_user.timezone, &block)
   # end
 end
