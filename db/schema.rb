@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_143041) do
   create_table "appointments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "description"
-    t.string "status", default: "pendiente"
+    t.string "status", default: "PENDIENTE"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false

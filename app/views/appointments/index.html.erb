@@ -1,6 +1,6 @@
 <div class="py-5">
   <div class="align-items-center py-3" >
-    <h4><strong>Listado de Citas</strong></h4>
+    <h4><strong>Listado de Citas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
   </div>
 
   <div class="align-items-right">
@@ -30,7 +30,9 @@
               <td><%= a.start_date %></td>
               <td><%= a.end_date %></td>
               <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <% if current_user.client == false %>
               <td><%= button_to "Crear OT", new_order_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <% end %>
               <td><%= link_to "Eliminar cita", appointment_path(a),class:"btn btn-outline-primary", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
             </tr>
           <% end %>
