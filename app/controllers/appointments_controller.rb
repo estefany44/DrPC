@@ -33,6 +33,7 @@ class AppointmentsController < ApplicationController
   end
 
   def edit 
+    @appointment.user = current_user
   end
   
   def update 
