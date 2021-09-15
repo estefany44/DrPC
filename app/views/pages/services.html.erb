@@ -1,33 +1,55 @@
+ <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <a class="navbar-brand" href="#">
+        <img src="assets/1.jpeg" alt="logo"/>
+      </a>
+        <!-- <div class="logo-navbar">
+          <h1>Doctor PC</h1>
+        </div> -->
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+          </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" <%= link_to "Home", root_path %></a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" <%= link_to "Citas", appointments_path %></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" <%= link_to "Ordenes", orders_path %></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" <%= link_to "Servicios", services_path %></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="assets/avatar.jpg" alt="avatar"/>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="nav-link" <%= link_to "login", new_user_session_path %></a>
+                    <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
+                  </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
 
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                  <a href="#">
-                     <article class="service-block-2 text-center">
-                        <figure>
-                           <img src="images/service_4.jpg" alt="service">
-                        </figure>
-                        <h3>
-                           Display Repair
-                           <br>
-                           <span>Starting @ $29</span>
-                        </h3>
-                     </article>
-                  </a>
-               </div>
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.farmalatina.cl/wp-content/uploads/2020/06/ServTecnico.jpg)">
-    <h2>Tutoriales</h2>
+<div class="container">
+
+    <h2 class="text-center">CUADROS DE ABAJITO</h2>
+
+  <div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/assets/FOTO1.jpg">
+  Tarjeta 1
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.iia.cl/img/banners/venta-arriendo-hardware_1.jpg)">
-    <h2>Agenda tu visita</h2>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/assets/FOTO2.jpg)">
+    Tarjeta 2
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.iia.cl/img/banners/hardware-repair_1.jpg)">
-    <h2>Contactanos
-    </h2>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/assets/FOTO3.jpg)">
+    Tarjeta 3
   </div>
 </div>
-
-<%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
-<%= link_to "Agenda tu cita", new_appointment_path, class:"btn btn-primary",:method => :get%>
+</div>
