@@ -4,6 +4,6 @@
   <%= f.input :price %>
   <%= f.input :delivery_date, as: :string, input_html: {type: :date}%>
   <%= f.input :status, collection: ['En Proceso','Terminada','Cancelada']%>
-  <%= f.association :appointment, :collection => Appointment.where(:status=> 'CONFIRMADA'), label_method: :id, value_method: :id %>
+  <%= f.association :appointment, :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
   <%= f.submit "Guardar", :class => 'guardar' %>
 <% end %>
