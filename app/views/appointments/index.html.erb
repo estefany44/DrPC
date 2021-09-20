@@ -39,10 +39,6 @@
     <h4><strong>Listado de Citas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
   </div>
 
-  <div class="align-items-right">
-    <%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
-  </div>
-
 <div class="container-sm py-3">
   <div class="table-responsive-sm">
     <table class="table table-striped">
@@ -75,6 +71,12 @@
           <% end %>
         </tbody>
       </table>
+
+  </br>
+
+
+  <%= button_to "Agendar cita", new_appointment_path, class:"btn btn-primary", :method => :get %>
+
   </div>
 </div>
 
