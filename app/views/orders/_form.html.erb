@@ -1,9 +1,9 @@
 <%= simple_form_for(order) do |f| %>
-  <%= f.input :diagnostic %>
-  <%= f.input :solution %>
-  <%= f.input :price %>
-  <%= f.input :delivery_date, as: :string, input_html: {type: :date}%>
-  <%= f.input :status, collection: ['En Proceso','Terminada','Cancelada']%>
-  <%= f.association :appointment, :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
+  <%= f.input :diagnostic, label:'Diagnóstico' %>
+  <%= f.input :solution, label: 'Solución' %>
+  <%= f.input :price, label: 'Precio'%>
+  <%= f.input :delivery_date, label: 'Fecha estimada de entrega', as: :string, input_html: {type: :date}%>
+  <%= f.input :status, label: 'Situación Actual', collection: ['En Proceso','Terminada','Cancelada']%>
+  <%= f.association :appointment, label: 'Citas' :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
   <%= f.submit "Guardar", :class => 'guardar' %>
 <% end %>

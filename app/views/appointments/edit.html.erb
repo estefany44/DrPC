@@ -2,6 +2,5 @@
     <p>
     <%= render "appointmentform", appointment: @appointment %>
       <%= link_to "Eliminar cita", appointment_path(@appointment), method: :delete, data: { confirm: "¿eliminar cita?" } %>
-      <%= link_to "Volver a Home", root_path, class:"btn btn-primary",:method => :get%>
     </p>
 </div>
