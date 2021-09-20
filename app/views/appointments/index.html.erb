@@ -1,3 +1,39 @@
+ <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <a class="navbar-brand" href="#">
+        <img src="assets/1.jpeg" alt="logo"/>
+      </a>
+        <!-- <div class="logo-navbar">
+          <h1>Doctor PC</h1>
+        </div> -->
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+          </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" <%= link_to "Home", root_path %></a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" <%= link_to "Citas", appointments_path %></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" <%= link_to "Ordenes", orders_path %></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" <%= link_to "Servicios", services_path %></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="assets/avatar.jpg" alt="avatar"/>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="nav-link" <%= link_to "login", new_user_session_path %></a>
+                    <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
+                  </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+
 <div class="py-5">
   <div class="align-items-center py-3" >
     <h4><strong>Listado de Citas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
@@ -15,17 +51,18 @@
           <th scope="col">Id de la cita</th>
           <th scope="col">Descripcion</th>
           <th scope="col">Status</th>
+          <th scope="col">Nombre del cliente</th>
           <th scope="col">Email del cliente</th>
           <th scope="col">Fecha</th>
-          <th scope="col"></th>
         </tr>
       </thead>      
         <tbody>
-          <% @appointments.each  do |a| %>
+          <% @appointments.each do |a| %>
             <tr>
               <th scope="row"><%= a.id %></th>
               <td><%= a.description %></td>
               <td><%= a.status %></td>
+                <td><%= a.user.first_name%></td>
               <td><%= a.user.email%></td>
               <td><%= a.start_date %></td>
               <td><%= a.end_date %></td>
