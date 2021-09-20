@@ -40,22 +40,23 @@
   </div>
 
 <div class="container-sm py-3">
-  <div class="table-responsive-sm">
-    <table class="table table-striped">
+  <div class="table-responsive">
+    <table class="table">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
       <thead>
         <tr>
-          <th scope="col">Id de la cita</th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Status</th>
-          <th scope="col">Nombre del cliente</th>
-          <th scope="col">Email del cliente</th>
-          <th scope="col">Fecha</th>
+          <th style="width: <?php echo $width ?>%">Id de la cita</th>
+          <th style="width: <?php echo $width ?>%">Descripcion</th>
+          <th style="width: <?php echo $width ?>%">Status</th>
+          <th style="width: <?php echo $width ?>%">Nombre del cliente</th>
+          <th style="width: <?php echo $width ?>%">Email del cliente</th>
+          <th style="width: <?php echo $width ?>%">Fecha</th>
         </tr>
       </thead>      
         <tbody>
           <% @appointments.each do |a| %>
             <tr>
-              <th scope="row"><%= a.id %></th>
+              <th style="width: <?php echo $width ?>%"><%= a.id %></th>
               <td><%= a.description %></td>
               <td><%= a.status %></td>
                 <td><%= a.user.first_name%></td>
