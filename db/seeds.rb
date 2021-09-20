@@ -5,14 +5,14 @@ User.destroy_all
 puts "Creando Usuarios"
 User.create(first_name: "Aministrador", last_name: "DrPC", rut: "9999999-9", client: false, address: "Avda Plama 38", phone: "991474434", email: "admin@dominio.com", password: "password")
 User.create(first_name: "Cliente", last_name: "Nuevo", rut: "9999999-9", client: true, address: "Avda luz 258", phone: "999999", email: "cliente@dominio.com", password: "password")
-puts "Creando Appoitnments"
+puts "Creando citas"
 
-Appointment.create(user: User.first, description: "Descripcion", status: "PENDIENTE")
-Appointment.create(user:User.last, description: "No Enciende", status: "CONFIRMADA")
+Appointment.create(user: User.first, description: "Descripcion", status: "Pendiente")
+Appointment.create(user:User.last, description: "No Enciende", status: "Confirmada")
 puts "Terminado"
 
 Appointment.create(user: User.last, description: "No enciende", status: "Pendiente")
-puts "Creando (4) Orders"
+puts "Creando (4) ordenes"
 Order.create(appointment:Appointment.last, diagnostic:"Falla en Pantalla", solution:"Cambio de Pantalla", status:"Abierta", price:15000)
 Order.create(appointment:Appointment.last, diagnostic:"Falla en Procesador", solution:"Instalacion de Disipador", status:"Abierta", price:25000)
 Order.create(appointment:Appointment.first, diagnostic:"Cabezal de impresora sucio", solution:"Limpieza de cabezal", status:"Abierta", price:5000)

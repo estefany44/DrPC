@@ -7,13 +7,11 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brand img {
+  width: 50px;
 }
 
-
-
-nav.navbar {
+.nav.navbar {
 	width: 100%;
 	top: 0;
 	z-index: 999;
@@ -73,7 +71,7 @@ nav.navbar .nav-item .nav-link:before {
 	transition: all 0.3s ease-in-out 0s;
 }
 
-nav.navbar .nav-item .nav-link.active:before {
+.nav.navbar .nav-item .nav-link.active:before {
 	visibility: visible;
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
@@ -96,11 +94,11 @@ nav.fixed-top {
 	margin: 0
 }
 
-nav.fixed-top .navbar-brand.logo h1 {
+.nav.fixed-top .navbar-brand.logo h1 {
 	color: #333
 }
 
-nav.fixed-top .navbar-brand.logo h1 span {
+.nav.fixed-top .navbar-brand.logo h1 span {
 	color: #333
 }
 
