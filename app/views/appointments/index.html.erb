@@ -46,8 +46,8 @@
       <thead>
         <tr>
           <th style="width: <?php echo $width ?>%">Id de la cita</th>
-          <th style="width: <?php echo $width ?>%">Descripcion</th>
-          <th style="width: <?php echo $width ?>%">Status</th>
+          <th style="width: <?php echo $width ?>%">Descripción</th>
+          <th style="width: <?php echo $width ?>%">Estado</th>
           <th style="width: <?php echo $width ?>%">Nombre del cliente</th>
           <th style="width: <?php echo $width ?>%">Email del cliente</th>
           <th style="width: <?php echo $width ?>%">Fecha</th>
@@ -72,12 +72,6 @@
           <% end %>
         </tbody>
       </table>
-
-  </br>
-
-
-  <%= button_to "Agendar cita", new_appointment_path, class:"btn btn-primary", :method => :get %>
-
   </div>
 </div>
 
