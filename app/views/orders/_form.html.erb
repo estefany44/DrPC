@@ -3,7 +3,7 @@
   <%= f.input :solution, label: 'Solución' %>
   <%= f.input :price, label: 'Precio'%>
   <%= f.input :delivery_date, label: 'Fecha estimada de entrega', as: :string, input_html: {type: :date}%>
-  <%= f.input :status, label: 'Situación Actual', collection: ['En Proceso','Terminada','Cancelada']%>
-  <%= f.association :appointment, label: 'Citas' :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
+  <%= f.input :status, label: 'Estado', collection: ['En Proceso','Terminada','Cancelada']%>
+  <%= f.association :appointment, label: 'Citas', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
   <%= f.submit "Guardar", :class => 'guardar' %>
 <% end %>
