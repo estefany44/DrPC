@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'services', to: 'pages#services'
+  get 'tutorials', to: 'pages#tutorials'
   resources :orders
   resources :appointments
 end
