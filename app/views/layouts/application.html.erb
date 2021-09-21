@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DrPC</title>
+    <title>DoctorPC</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
-  <body>
+  <body >
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="container" >
+    <div class="container bg-white">
       <%= render "shared/navbar" %>
-    <%= yield %>
-  </div>
+      <%= yield %>
+     </br>
+      <footer class="text-center text-lg-start text-muted bg-white">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <p><i class="fas fa-phone me-3"></i> + 569 91234678 </p>
+        </div>
+       <div>
+          <p><i class="fas fa-envelope me-3"></i>info@doctorpc.com </p>
+        </div>
+       </section>
+      </footer>
+    </div>
   </body>
 </html>
