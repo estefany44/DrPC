@@ -1,0 +1,20 @@
+<div class="navbar sticky-top navbar-expand-lg navbar-light navbar-lewagon ">
+  <img src="assets/Logo_DrPC.png" alt="logo" class="navbar-brand">
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+     <li class="nav-item"><a class="nav-link" <%= link_to "HOME", root_path %></a></li>
+     <li class="nav-item"><a class="nav-link" <%= link_to "CITAS", appointments_path %></a></li>
+     <li class="nav-item"><a class="nav-link" <%= link_to "ORDENES", orders_path %></a></li>
+     <li class="nav-item"><a class="nav-link" <%= link_to "SERVICIOS", services_path %></a></li>
+     <li class="nav-item dropdown"><img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="assets/avatar.jpg" alt="avatar"/>
+     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+       <a class="nav-link" <%= link_to "login", new_user_session_path %></a>
+       <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
+     </div>
+     </li>
+    </ul>
+  </div>
+</div>
