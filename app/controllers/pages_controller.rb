@@ -7,6 +7,4 @@ class PagesController < ApplicationController
   def services
   end
 
-  def test
-  end
 end
