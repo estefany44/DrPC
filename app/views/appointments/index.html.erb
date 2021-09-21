@@ -1,22 +1,22 @@
 <div class="py-5">
-  <div class="align-items-center py-3" >
+  <div class="align-items-center py-3">
     <h4><strong>Listado de Citas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
   </div>
-
+</div>
 <div class="container-sm py-3">
-  <div class="table-responsive">
-    <table class="table">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-      <thead>
-        <tr>
-          <th style="width: <?php echo $width ?>%">Id de la cita</th>
-          <th style="width: <?php echo $width ?>%">Descripción</th>
-          <th style="width: <?php echo $width ?>%">Estado</th>
-          <th style="width: <?php echo $width ?>%">Nombre del cliente</th>
-          <th style="width: <?php echo $width ?>%">Email del cliente</th>
-          <th style="width: <?php echo $width ?>%">Fecha</th>
-        </tr>
-      </thead>      
+    <div class="table-responsive-sm">
+     <table class="table table-striped">
+      <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/> -->
+        <thead>
+         <tr>
+           <th style="width: <?php echo $width ?>%">Id Cita</th>
+           <th style="width: <?php echo $width ?>%">Descripción</th>
+           <th style="width: <?php echo $width ?>%">Estado</th>
+           <th style="width: <?php echo $width ?>%">Nombre del cliente</th>
+           <th style="width: <?php echo $width ?>%">Email del cliente</th>
+           <th style="width: <?php echo $width ?>%">Fecha</th>
+         </tr>
+        </thead>
         <tbody>
           <% @appointments.each do |a| %>
             <tr>
@@ -27,15 +27,15 @@
               <td><%= a.user.email%></td>
               <td><%= a.start_date %></td>
               <td><%= a.end_date %></td>
-              <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <td><%= button_to "Detalle", appointment_path(a), class:"btn btn bg-success", :method => :get %></td>
               <% if current_user.client == false %>
-              <td><%= button_to "Crear OT", new_order_path(a), class:"btn btn-outline-primary", :method => :get %></td>
+              <td><%= button_to "Crear OT", new_order_path(a), class:"btn btn bg-success", :method => :get %></td>
               <% end %>
-              <td><%= link_to "Eliminar cita", appointment_path(a),class:"btn btn-outline-primary", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
+              <td><%= link_to "Eliminar", appointment_path(a),class:"btn btn bg-success", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
             </tr>
           <% end %>
         </tbody>
-      </table>
-  </div>
+    </table>
 </div>
+
 
