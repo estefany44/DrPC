@@ -29,9 +29,9 @@
             <td><%= ot.status %></td>
             <td><%= ot.delivery_date %></td>
              <% if current_user.client == false %>
-            <td><%= button_to "Edit", edit_order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
+            <td><%= button_to "Edit", edit_order_path(ot), class:"btn bg-success", :method => :get %></td>
              <% end %>
-            <td><%= button_to "Detail", order_path(ot), class:"btn btn-outline-primary", :method => :get %></td>
+            <td><%= button_to "Detail", order_path(ot), class:"btn bg-success", :method => :get %></td>
           </tr>
         <% end %>
       </tbody>
