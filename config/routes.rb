@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'services', to: 'pages#services'
   get 'tutorials', to: 'pages#tutorials'
-  get 'tec_show', to: 'pages#tec_show'
+  get 'description', to: 'pages#description'
   resources :orders
   resources :appointments
 end
