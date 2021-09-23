@@ -9,19 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-  <body>
 
-    <div class="container-fluid ">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-
+  <body >
     <div class="container-fluid bg-white">
       <%= render "shared/navbar" %>
       <%= yield %>
       <%= render "shared/footer" %>
+      <div class="container-fluid bg-white">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+      </div>
     </div>
-
   </body>
 </html>
 

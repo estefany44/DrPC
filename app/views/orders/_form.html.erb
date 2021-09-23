@@ -1,4 +1,6 @@
-<%= simple_form_for(order) do |f| %>
+<div class="container-fluid bg-light">
+
+   <%= simple_form_for(order) do |f| %>
   <%= f.input :diagnostic, label:'Diagnóstico' %>
   <%= f.input :solution, label: 'Solución' %>
   <%= f.input :price, label: 'Precio'%>
@@ -7,3 +9,5 @@
   <%= f.association :appointment, label: 'Citas', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
   <%= f.submit "Guardar", :class => 'guardar' %>
 <% end %>
+
+</div>
