@@ -13,20 +13,12 @@
   <body >
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="container bg-white">
+    <div class="container-fluid bg-white">
       <%= render "shared/navbar" %>
       <%= yield %>
+      <%= render "shared/footer" %>
      </br>
-      <footer class="text-center text-lg-start text-muted bg-white">
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div class="me-5 d-none d-lg-block">
-          <p><i class="fas fa-phone me-3"></i> + 569 91234678 </p>
-        </div>
-       <div>
-          <p><i class="fas fa-envelope me-3"></i>info@doctorpc.com </p>
-        </div>
-       </section>
-      </footer>
+
     </div>
   </body>
 </html>
