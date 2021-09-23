@@ -10,22 +10,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <div class="container bg-white container-lg">
-      <%= render "shared/navbar" %>
-      <%= yield %>
+
+    <div class="container-fluid ">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-     </br>
-      <footer class="text-center text-lg-start text-muted bg-white">
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div class="me-5 d-none d-lg-block">
-          <address><p><i class="fas fa-phone me-3"></i> + 569 91234678 </p></address>
-        </div>
-       <div>
-          <address><p><i class="fas fa-envelope me-3"></i>info@doctorpc.com </p></address>
-        </div>
-       </section>
-      </footer>
     </div>
+
+    <div class="container-fluid bg-white">
+      <%= render "shared/navbar" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
+
   </body>
 </html>
+
+
