@@ -1,41 +1,36 @@
-<div class="container py-3 align-items-left py-3">
-  <h4><strong> Detalle OT  N°<%=@order.id%></strong></h3>
-</div>
+<div class="container-sm py-5">
+  <h4><strong> Estatus Actualizado de OT  N°<%=@order.id%></strong><small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
 <% if current_user.client == false %>
-<div class="col-sm-3 p-3">
-     <%= button_to "Borrar", order_path(@order), method: :delete, class:"btn btn-danger", data: { confirm: "Ud. está seguro?" }%>
-</div>
+  <div class="justify-content-center py-3">
+     <%= button_to "Eliminar Orden de Trabajo", order_path(@order), method: :delete, class:"btn btn-danger", data: { confirm: "Ud. está seguro?" }%>
+  </div>
 <% end %>
-<div class="container overflow-hidden border bg-light">
-  <div class="row gx-5 ">
+
+<div class="justify-content-center">
+<%= simple_form_for(@order) do |f| %>
+  <%= f.input :diagnostic, label:'Diagnóstico', disable: true, readonly: true %>
+  <%= f.input :solution, label: 'Solución' , disable: true, readonly: true%>
+  <div class="row">
     <div class="col">
-     <div class="p-2 "><strong>Diagnostic:</strong> <%= @order.diagnostic %></div>
+      <%= f.input :price, label: 'Precio' , disable: true, readonly: true%>
     </div>
     <div class="col">
-      <div class="p-2 "><strong>Solution:</strong> <%= @order.solution %></div>
+      <%= f.input :delivery_date, label: 'Fecha Entrega', as: :string, input_html: {type: :date} , disable: true, readonly: true%>
     </div>
   </div>
-   <div class="row gx-5 border-top">
+  <br/>
+  <div class="row">
     <div class="col">
-     <div class="p-2 "><strong>Price:</strong><%= @order.price %></div>
+      <%= f.input :status, label: 'Estatus', collection: ['En Proceso','Terminada','Cancelada'], disable: true, readonly: true%>
     </div>
     <div class="col">
-      <div class="p-2 "><strong>Delivery Date:</strong> <%= @order.delivery_date %></div>
+      <%= f.association :appointment, label: 'Nº Reserva Asociada', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id , disable: true, readonly: true%>
     </div>
   </div>
-  <div class="row gx-5 border-top">
-    <div class="col ">
-     <div class="p-2 "><strong>Status:</strong><%= @order.status%></div>
-    </div>
-    <div class="col">
-      <div class="p-2 "><strong>Appointment:</strong><%= @order.appointment_id %></div>
-    </div>
-  </div>
-</div>
+<% end %>
+
 
 <div class="col-sm-9 p-3">
-    <%= link_to "Volver al listado", orders_path %>
+    <%= link_to "Volver Atrás", orders_path %>
+  </div>
 </div>
-
-
-

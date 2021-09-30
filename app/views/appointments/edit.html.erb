@@ -1,6 +1,70 @@
-<div class="container">
-    <p>
-    <%= render "appointmentform", appointment: @appointment %>
-      <%= link_to "Eliminar cita", appointment_path(@appointment), method: :delete, data: { confirm: "¿eliminar cita?" } %>
-    </p>
+<div class="w-50 py-5 ">
+  <div class="col">
+    <br>
+    <h4><strong>Editar Reserva</strong> <small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
+    <br>
+  </div>
+  <div class="justify-content-center">
+    <% if current_user.client == false %>
+      <%= button_to "Eliminar Cita", appointment_path(@appointment), method: :delete, class:"btn btn-danger", data: { confirm: "Ud. está seguro?" }%>
+    <% end %>
+    </br>
+  </div>
+  <%= simple_form_for(@appointment) do |t| %>
+  <% if @appointment.status == 'Confirmada'%>
+      <div class="alert alert-info" role="alert">
+        Está reserva ya sé Confirmó
+      </div>
+      <%= t.input :description, label: 'Problema', readonly: true, disabled: true %>
+      <div class="row justify-content-center">
+      <div class="col">
+        <%= t.input :start_date, label: 'Fecha retiro:', readonly: true, disabled: true, as: :string, input_html: {type: :date} %>
+      </div>
+      <div class="col">
+        <%= t.input :time, label: 'Hora:', readonly: true, disabled: true  %>
+      </div>
+      </div>
+      <div class="row justify-content-center">
+      <div class="col">
+         <%= t.input :status, label: 'Estado', collection: ['Pendiente', 'Confirmada', 'Cancelada'], readonly: true, disabled: true,:input_html => {:style => 'width: 200px'}%>
+      </div>
+    <div class="col">
+    </div>
+    </div>
+  <div class="row align-items-right">
+    <br>
+    <div class="col">
+
+    </div>
+  </div>
+
+
+    <% else %>
+      <div class="row justify-content-center">
+      <div class="col">
+        <%= t.input :start_date, label: 'Fecha retiro:', required: true, as: :string, input_html: {type: :date} %>
+      </div>
+      <div class="col">
+        <%= t.input :time, label: 'Hora:', required: true, collection: ['9:00hs', '10:00hs', '11:00hs', '14:00hs', '15:00hs', '16:00hs'] %>
+      </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <% if current_user.client == false %>
+            <%= t.input :status, label: 'Estado', collection: ['Pendiente', 'Confirmada', 'Cancelada'], default: 'Confirmada', :input_html => {:style => 'width: 200px'}%>
+          <%end%>
+    </div>
+
+    <div class="col">
+    </div>
+    </div>
+  <div class="row align-items-right">
+    <br>
+    <div class="col">
+      <%= t.button :submit, "Actualizar Cita", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+  <br>
 </div>
+<% end %>

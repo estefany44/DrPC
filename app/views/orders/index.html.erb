@@ -1,21 +1,14 @@
-<div class="py-5">
-  <div class="align-items-center py-3" >
+<div class="container-sm py-5">
     <h4><strong>Listado de Ordenes de Trabajo OT</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
-  </div>
-  <div class="align-items-right">
-   <!--  <%= link_to "Crear Nueva Orden de Trabajo", new_order_path, class:"btn btn-primary", :method => :get %> -->
-  </div>
-</div>
-<div class="container-sm py-3">
   <div class="table-responsive-sm">
-    <table class="table table-striped">
-      <thead>
+    <table class="table table-striped table-hover table-responsive-sm">
+      <thead class="thead-dark">
         <tr>
           <th scope="col">Nº OT</th>
           <th scope="col">Diagnostico</th>
-          <th scope="col">Solución</th>
           <th scope="col">Status</th>
-          <th scope="col">Delivery Date</th>
+          <th scope="col">Fecha Ingreso</th>
+          <th scope="col">Fecha Entrega</th>
           <th scope="col"></th>
           <th scope="col"></th>
       </tr>
@@ -25,13 +18,15 @@
           <tr>
             <th scope="row"><%= ot.id %></th>
             <td><%= ot.diagnostic %></td>
-            <td><%= ot.solution %></td>
             <td><%= ot.status %></td>
-            <td><%= ot.delivery_date %></td>
-             <% if current_user.client == false %>
-            <td><%= button_to "Edit", edit_order_path(ot), class:"btn bg-success", :method => :get %></td>
-             <% end %>
-            <td><%= button_to "Detail", order_path(ot), class:"btn bg-success", :method => :get %></td>
+            <td><%= ot.status %></td>
+            <td>
+                <%if ot.delivery_date != nil %>
+                  <%= ot.delivery_date.strftime("%d-%B-%Y") %>
+                <% end %>
+              </td>
+            <td><% if current_user.client == false %><%= button_to "Editar", edit_order_path(ot), class:"btn btn-primary ", :method => :get %> <% end %></td>
+            <td><%= button_to "Estatus", order_path(ot), class:"btn btn-primary", :method => :get %></td>
           </tr>
         <% end %>
       </tbody>

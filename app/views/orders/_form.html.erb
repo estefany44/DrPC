@@ -1,9 +1,31 @@
+<div class="container-sm p-5">
+<br>
+<div class="justify-content-center">
+<h4><strong>Ingreso de Orden de Trabajo</strong> <small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
+<br>
 <%= simple_form_for(order) do |f| %>
   <%= f.input :diagnostic, label:'Diagnóstico' %>
   <%= f.input :solution, label: 'Solución' %>
-  <%= f.input :price, label: 'Precio'%>
-  <%= f.input :delivery_date, label: 'Fecha estimada de entrega', as: :string, input_html: {type: :date}%>
-  <%= f.input :status, label: 'Situación Actual', collection: ['En Proceso','Terminada','Cancelada']%>
-  <%= f.association :appointment, label: 'Citas', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
-  <%= f.submit "Guardar", :class => 'guardar' %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :price, label: 'Precio'%>
+    </div>
+    <div class="col">
+      <%= f.input :delivery_date, label: 'Fecha estimada de entrega', as: :string, input_html: {type: :date}%>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col">
+      <%= f.input :status, label: 'Estatus', collection: ['En Proceso','Terminada','Cancelada']%>
+    </div>
+    <div class="col">
+      <%= f.association :appointment, label: 'Nº Reserva', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
+    </div>
+  </div>
+  <%= f.button :submit, "Guardar", class: "btn btn-primary" %>
 <% end %>
+</div>
+<div class="container-sm py-5">
+
+</div>

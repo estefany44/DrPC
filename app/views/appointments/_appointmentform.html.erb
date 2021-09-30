@@ -1,9 +1,32 @@
-<%= simple_form_for(appointment) do |t| %>
-  <%= t.input :description, required: true, label: 'Ingresa una breve descripción de tu problema ' %>
-  <%= t.input :start_date, label: 'Fecha de atención', required: true, as: :string, input_html: {type: :date} %>
-  <%= t.input :time, label: 'Hora de atención', required: true, collection: ['9:00hs', '10:00hs', '11:00hs', '14:00hs', '15:00hs', '16:00hs'] %>
-  <% if current_user.client == false %>
-  <%= t.input :status, label: 'Estado', collection: ['Pendiente', 'Confirmada', 'Cancelada']%>
-  <% end %>
-  <%= t.submit "Guardar", :class => 'guardar' %>
-<% end %>
+<div class="d-lg-flex">
+  <div class="p-2">
+  <h4><strong>Ingresar Cita</strong> <small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
+  </div>
+    <div class="p-2">
+        <%= simple_form_for(@appointment) do |t| %>
+    <%= t.input :description, required: true, label: 'Problema? ' %>
+    <small id="passwordHelpBlock" class="form-text text-muted">
+      Por favor indicanos brevemente los detalles de su problema
+    </small>
+    <br>
+      <div class="col">
+        <%= t.input :start_date, label: 'Fecha retiro:', required: true, as: :string, input_html: {type: :date} %>
+      </div>
+      <div class="col">
+        <%= t.input :time, label: 'Hora:', required: true, collection: ['9:00hs', '10:00hs', '11:00hs', '14:00hs', '15:00hs', '16:00hs'] %>
+      </div>
+    </div>
+    <div class="p-2">
+      <div class="col">
+        <% if current_user.client == false %>
+          <%= t.input :status, label: 'Estado', collection: ['Pendiente', 'Confirmada', 'Cancelada']%>
+        <% end %>
+      </div>
+    </div>
+    <div class="p-2">
+      <%= t.button :submit, "Reservar Cita", class: "btn btn-primary" %>
+      <% end %>
+      </br>
+    </div>
+</div>
+

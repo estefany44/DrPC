@@ -1,0 +1,14 @@
+require 'twilio-ruby'
+
+account_sid = 'AC7195dc6899d8d7e9fda2c4ce5c16c58d'
+auth_token = '31d88c7c871f185db4650f2dd56d05df'
+client = Twilio::REST::Client.new(account_sid, auth_token)
+
+from = '+14155238886' # Your Twilio number
+to = '+56952317943' # Your mobile phone number
+
+client.messages.create(
+from: from,
+to: to,
+body: "Hey friend!"
+)

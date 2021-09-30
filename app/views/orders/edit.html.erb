@@ -1,4 +1,38 @@
-<div class="container">
-  <%= render 'form', order: @order %>
+<div class="container-sm p-5">
+<br>
+<div class="justify-content-center">
+<h4><strong>Ingreso de Orden de Trabajo</strong> <small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
+<br>
+<% if current_user.client == false %>
+  <div class="justify-content-center py-3">
+     <%= button_to "Eliminar Orden de Trabajo", order_path(@order), method: :delete, class:"btn btn-danger", data: { confirm: "Ud. está seguro?" }%>
+  </div>
+<% end %>
+<%= simple_form_for(@order) do |f| %>
+  <%= f.input :diagnostic, label:'Diagnóstico' %>
+  <%= f.input :solution, label: 'Solución' %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :price, label: 'Precio'%>
+    </div>
+    <div class="col">
+      <%= f.input :delivery_date, label: 'Fecha estimada de entrega', as: :string, input_html: {type: :date}%>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col">
+      <%= f.input :status, label: 'Situación Actual', collection: ['En Proceso','Terminada','Cancelada']%>
+    </div>
+    <div class="col">
+      <%= f.association :appointment, label: 'Nº Reserva', :collection => Appointment.where(:status=> 'Confirmada'), label_method: :id, value_method: :id %>
+    </div>
+  </div>
+  <%= f.button :submit, "Guardar", class: "btn btn-primary" %>
+<% end %>
 </div>
+<div class="container-sm py-5">
+
+</div>
+
 
