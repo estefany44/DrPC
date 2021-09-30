@@ -1,1 +1,35 @@
-<%= render 'appointmentform', appointment: @appointment %>
+
+  <div class="w-50  align-items-center py-5">
+    <h4><strong>Ingresar Reserva</strong>
+    </br>
+    <small class="text-muted"> (Usuario activo: <%= current_user.first_name %>)</small></h4>
+  <div class="justify-content-center py-2">
+
+    </br>
+  </div>
+  <%= simple_form_for(@appointment) do |t| %>
+    <%= t.input :description, required: true, label: 'Problema? ' %>
+    <div class="row justify-content-center">
+    <div class="col">
+      <%= t.input :start_date, label: 'Fecha Retiro:', required: true, as: :string, input_html: {type: :date} %>
+    </div>
+    <div class="col">
+      <%= t.input :time, label: 'Hora:', required: true, collection: ['9:00hs', '10:00hs', '11:00hs', '14:00hs', '15:00hs', '16:00hs'] %>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+      <% if current_user.client == false %>
+        <%= t.input :status, label: 'Estado', readonly: true, :input_html => {:style => 'width: 200px'}%>
+      <% end %>
+    </div>
+    <div class="col">
+    </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <%= t.button :submit, "Reservar", class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+</div>

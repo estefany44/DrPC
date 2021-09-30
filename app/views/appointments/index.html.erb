@@ -1,41 +1,37 @@
-<div class="py-5">
-  <div class="align-items-center py-3">
-    <h4><strong>Listado de Citas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
-  </div>
-</div>
-<div class="container-sm py-3">
+<div class="container-sm py-5">
+    <h4><strong>Listado de Reservas</strong></h4> <p>| User: <%= current_user.first_name %> |</p>
     <div class="table-responsive-sm">
-     <table class="table table-striped">
-      <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/> -->
-        <thead>
+     <table class="table table-striped table-hover table-responsive-sm">
+        <thead class="thead-dark">
          <tr>
-           <th style="width: <?php echo $width ?>%">Id Cita</th>
-           <th style="width: <?php echo $width ?>%">Descripción</th>
-           <th style="width: <?php echo $width ?>%">Estado</th>
-           <th style="width: <?php echo $width ?>%">Nombre del cliente</th>
-           <th style="width: <?php echo $width ?>%">Email del cliente</th>
-           <th style="width: <?php echo $width ?>%">Fecha</th>
+           <th>Nº Cita</th>
+           <th>Descripción</th>
+           <th>Estado</th>
+           <th>Email del cliente</th>
+           <th>Fecha</th>
+           <th></th>
+          <th></th>
          </tr>
         </thead>
         <tbody>
           <% @appointments.each do |a| %>
             <tr>
-              <th style="width: <?php echo $width ?>%"><%= a.id %></th>
+              <th><%= a.id %></th>
               <td><%= a.description %></td>
               <td><%= a.status %></td>
-                <td><%= a.user.first_name%></td>
               <td><%= a.user.email%></td>
-              <td><%= a.start_date %></td>
-              <td><%= a.end_date %></td>
-              <td><%= button_to "Detalle", appointment_path(a), class:"btn btn bg-success", :method => :get %></td>
-              <% if current_user.client == false %>
-              <td><%= button_to "Crear OT", new_order_path(a), class:"btn btn bg-success", :method => :get %></td>
-              <% end %>
-              <td><%= link_to "Eliminar", appointment_path(a),class:"btn btn bg-success", method: :delete, data: { confirm: "¿eliminar cita?"} %></td>
+              <td>
+                <%if a.start_date != nil %>
+                  <%= a.start_date.strftime("%d-%B-%Y") %>
+                <% end %>
+              </td>
+              <td><%= button_to "Detalle", appointment_path(a), class:"btn btn-primary ", :method => :get %></td>
+
+              <td><% if current_user.client == false %><%= button_to "Crear OT", new_order_path(a), class:"btn btn-primary ", :method => :get %><% end %></td>
+
             </tr>
           <% end %>
         </tbody>
     </table>
 </div>
-
 

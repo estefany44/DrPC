@@ -5,9 +5,9 @@ class AppointmentsController < ApplicationController
     
     if current_user.client == true
       
-      @appointments = Appointment.where(user_id: current_user.id)
+      @appointments = Appointment.where(user_id: current_user.id).order("id desc")
     else
-      @appointments = Appointment.all
+      @appointments = Appointment.all.order("id desc")
       
     end
   end 

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_194422) do
   create_table "appointments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "description"
-    t.string "status", default: "pendiente"
+    t.string "status", default: "Pendiente"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_194422) do
     t.text "solution"
     t.integer "price"
     t.date "delivery_date"
-    t.string "status"
+    t.string "status", default: "En Proceso"
     t.bigint "appointment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
