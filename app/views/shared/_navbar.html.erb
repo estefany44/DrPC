@@ -1,5 +1,5 @@
 <div class="navbar navbar-lewagon navbar-expand fixed-top" style="background-color: #03989E;">
-  <img src="/assets/Logo_DrPC_menu.jpg" alt="logo" class="navbar-brand">
+  <img src="<%=cl_image_tag("drpc/Logo_DrPC_menu_ydjswf.jpg")%>" alt="logo" class="navbar-brand">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,7 +17,7 @@
      <li class="nav-item "><a class="nav-link" <%= link_to "Citas", appointments_path %></a></li>
      <li class="nav-item "><a class="nav-link" <%= link_to "Ordenes", orders_path %></a></li>
      <li class="nav-item "><a class="nav-link" <%= link_to "Servicios", description_path %></a></li>
-     <li class="nav-item dropdown "><img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="/assets/avatar.jpg" alt="avatar"/>
+     <li class="nav-item dropdown "><img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%=cl_image_tag("drpc/avatar_bvuxzf.jpg")%>" alt="avatar"/>
      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background-color: #03989E;">
        <a class="nav-link" <%= link_to "login", new_user_session_path %></a>
        <a class="nav-link" <%= link_to "logout", destroy_user_session_path, method: :delete %></a>
